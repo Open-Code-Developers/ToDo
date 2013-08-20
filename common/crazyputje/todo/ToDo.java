@@ -41,12 +41,7 @@ public class ToDo {
 
 	@ForgeSubscribe
 	public void OnRender(RenderGameOverlayEvent.Post event) {
-		ServerData data = null;
-		try {
-			data = Utils.getServerData();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		ServerData data = Utils.getServerData();
 		if (MinecraftServer.getServer() != null && MinecraftServer.getServer().worldServers.length > 0 && !MinecraftServer.getServer().func_130014_f_().getWorldInfo().getWorldName().equals(worldLoaded)) {
 			worldLoaded = MinecraftServer.getServer().func_130014_f_().getWorldInfo().getWorldName();
 			Load();
@@ -54,8 +49,6 @@ public class ToDo {
 			worldLoaded = data.serverIP;
 			Load();
 		}
-
-		System.out.println(worldLoaded);
 
 		if (event.type.equals(RenderGameOverlayEvent.ElementType.HOTBAR)) {
 			if (guiToDo_open) {

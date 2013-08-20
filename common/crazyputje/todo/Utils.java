@@ -1,13 +1,13 @@
 package crazyputje.todo;
 
 import java.io.File;
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.Vector;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ServerData;
+import cpw.mods.fml.common.ObfuscationReflectionHelper;
 
 public class Utils {
 
@@ -17,10 +17,8 @@ public class Utils {
 		return saveFile;
 	}
 
-	public static ServerData getServerData() throws Exception {
-		Field f = Minecraft.class.getDeclaredField("currentServerData");
-		f.setAccessible(true);
-		return (ServerData) f.get(Minecraft.getMinecraft());
+	public static ServerData getServerData() {
+		return (ServerData) ObfuscationReflectionHelper.getPrivateValue(Minecraft.class, Minecraft.getMinecraft(), isObfuscated() ? "field_71422_O" : "currentServerData");
 	}
 
 	public static ArrayList<String> wrapList(ArrayList<String> list, int len) {
@@ -87,5 +85,15 @@ public class Utils {
 		}
 
 		return ret;
+	}
+
+	public static boolean isObfuscated() {
+		try {
+			Minecraft.class.getDeclaredField("currentServerData");
+			return false;
+		} catch (Exception e) {
+			return true;
+		}
+
 	}
 }

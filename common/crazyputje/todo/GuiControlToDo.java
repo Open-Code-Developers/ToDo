@@ -1,6 +1,5 @@
 package crazyputje.todo;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 import net.minecraft.client.Minecraft;
@@ -11,6 +10,7 @@ import net.minecraft.client.gui.GuiTextField;
 
 import org.lwjgl.input.Keyboard;
 
+import cpw.mods.fml.common.ObfuscationReflectionHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import crazyputje.todo.api.ToDoApi;
@@ -103,19 +103,9 @@ public class GuiControlToDo extends GuiScreen {
 			btn.yPosition = 40 + (i * 12);
 		}
 
-		try {
-			updateTxtFieldYPos(txtField, 74 + (toDoList.size() > 0 ? toDoList.get(toDoList.size() - 1).yPosition - toDoList.get(0).yPosition : 0));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		ObfuscationReflectionHelper.setPrivateValue(GuiTextField.class, txtField, (Object) (74 + (toDoList.size() > 0 ? toDoList.get(toDoList.size() - 1).yPosition - toDoList.get(0).yPosition : 0)), Utils.isObfuscated() ? "field_73814_c" : "yPos");
 		addBtn.yPosition = 96 + (toDoList.size() > 0 ? toDoList.get(toDoList.size() - 1).yPosition - toDoList.get(0).yPosition : 0);
 		txtField.drawTextBox();
 		super.drawScreen(par1, par2, par3);
-	}
-
-	public void updateTxtFieldYPos(GuiTextField txt, int newYPos) throws Exception {
-		Field f = GuiTextField.class.getDeclaredField("yPos");
-		f.setAccessible(true);
-		f.set(txt, newYPos);
 	}
 }
