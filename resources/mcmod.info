@@ -1,0 +1,21 @@
+[
+{
+  "modid": "todo",
+  "name": "ToDo",
+  "description": "A minecraft mod that adds a ToDo list Gui",
+  "version": "v1.1",
+  "mcversion": "1.6.2",
+  "url": "https://github.com/KeplerGaming/ToDo,
+  "updateUrl": "",
+  "authors": [
+    "crazyputje"
+  ],
+  "credits": "By crazyputje, based on an original idea by fuyuyuki",
+  "logoFile": "",
+  "screenshots": [
+  ],
+  "parent":"",
+  "dependencies": [
+  ]
+}
+]
