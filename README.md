@@ -27,4 +27,6 @@ Screenshots & Explanations
 
 Downloads
 ====
-[V 1.0](https://dl.dropboxusercontent.com/u/36116005/ToDo_v1.0.jar)
+**Latest** [V 1.0](https://dl.dropboxusercontent.com/u/36116005/todo/ToDo_v1.1.jar)
+
+[V 1.0](https://dl.dropboxusercontent.com/u/36116005/todo/ToDo_v1.0.jar)
