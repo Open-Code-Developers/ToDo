@@ -28,7 +28,11 @@ Screenshots & Explanations
 Downloads
 ====
 **Latest**
-[V 1.1](https://dl.dropboxusercontent.com/u/36116005/todo/ToDo_v1.1.jar)
+
+[V 1.2](https://dl.dropboxusercontent.com/u/36116005/todo/ToDo_v1.2.jar)
+
 
 **Old versions**
+
+[V 1.1](https://dl.dropboxusercontent.com/u/36116005/todo/ToDo_v1.1.jar)
 [V 1.0](https://dl.dropboxusercontent.com/u/36116005/todo/ToDo_v1.0.jar)

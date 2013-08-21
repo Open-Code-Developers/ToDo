@@ -24,7 +24,7 @@ import crazyputje.todo.api.ToDoApi;
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class ToDo {
 
-	public final static String MOD_ID = "todo", MOD_NAME = "ToDo", VERSION = "v 1.1";
+	public final static String MOD_ID = "todo", MOD_NAME = "ToDo", VERSION = "v 1.2";
 	public String worldLoaded;
 
 	@Instance
