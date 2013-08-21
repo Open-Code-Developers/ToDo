@@ -45,7 +45,7 @@ public class ToDo {
 		if (MinecraftServer.getServer() != null && MinecraftServer.getServer().worldServers.length > 0 && !MinecraftServer.getServer().func_130014_f_().getWorldInfo().getWorldName().equals(worldLoaded)) {
 			worldLoaded = MinecraftServer.getServer().func_130014_f_().getWorldInfo().getWorldName();
 			Load();
-		} else if (data != null && data.serverIP != null) {
+		} else if (data != null && data.serverIP != null && !data.serverIP.equals(worldLoaded)) {
 			worldLoaded = data.serverIP;
 			Load();
 		}
