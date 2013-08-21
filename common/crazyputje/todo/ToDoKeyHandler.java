@@ -30,7 +30,7 @@ public class ToDoKeyHandler extends KeyHandler {
 	@Override
 	public void keyDown(EnumSet<TickType> types, KeyBinding kb, boolean tickEnd, boolean isRepeat) {
 		if (kb.equals(bindings[0]) && tickEnd && Minecraft.getMinecraft().currentScreen == null) {
-			ToDo.instance.guiToDo_open = !ToDo.instance.guiToDo_open;
+			GuiToDo.fade();
 		} else if (kb.equals(bindings[1]) && tickEnd) {
 			if (!(Minecraft.getMinecraft().currentScreen instanceof GuiControlToDo) && Minecraft.getMinecraft().currentScreen == null) {
 				Minecraft.getMinecraft().displayGuiScreen(new GuiControlToDo());

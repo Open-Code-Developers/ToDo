@@ -25,7 +25,6 @@ import crazyputje.todo.api.ToDoApi;
 public class ToDo {
 
 	public final static String MOD_ID = "todo", MOD_NAME = "ToDo", VERSION = "v 1.1";
-	public boolean guiToDo_open = false;
 	public String worldLoaded;
 
 	@Instance
@@ -51,9 +50,7 @@ public class ToDo {
 		}
 
 		if (event.type.equals(RenderGameOverlayEvent.ElementType.HOTBAR)) {
-			if (guiToDo_open) {
-				GuiToDo.renderGui(event.partialTicks, event.resolution, event.mouseX, event.mouseY);
-			}
+			GuiToDo.renderGui(event.partialTicks, event.resolution, event.mouseX, event.mouseY);
 		}
 	}
 
